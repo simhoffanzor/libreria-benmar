@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <title>Librería Benmar</title>
+</head>
+<body>
+    <div class="row header">
+        <div class="col-10">
+            <h3 class="titulo" id="titulo">Libreria Benmar</h3>
+        </div>
+        <div class="col-2 colCarrito">
+            <img src="./resources/tienda-online.png" alt="carrito" id="img-carrito">
+            <p class="txt-carrito">Mi carrito</p>
+            <div class="contador"></div>
+            <div class="carrito">
+                <table class="table" aria-label="tabla de carrito">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="colImagen">Imagen</th>
+                        <th scope="col" class="colTitulo">Título</th>
+                        <th scope="col" class="colAutor">Autor</th>
+                        <th scope="col" class="colPrecio">Precio</th>
+                        <th scope="col" class="colCantidad">Cantidad</th>
+                        <th scope="col" class="colEliminar"></th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="contenedor-texto">
+                    <p>Tu carrito aún se encuentra vacío</p>
+                </div>
+                <div class="contenedor-botones">
+                    <button type="button" class="btn btn-carrito btn-secondary vaciar-carrito">Vaciar carrito</button>
+                    <button type="button" class="btn btn-primary btn-carrito btn-completar-compra" data-toggle="modal" data-target="#exampleModal">
+                        Completar compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Completa tus datos</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <form id="formulario">
+                <div class="form-group">
+                    <label for="nroTarjeta">Número de tarjeta</label>
+                    <input type="number" id="tarjeta" class="form-control tarjeta" placeholder="Ingresa los 16 dígitos">
+                    <small class="form-text text-muted">No compartiremos esta información con nadie sin tu autorización.</small>
+                </div>
+                <div class="form-group">
+                    <label for="seguridad">Código de seguridad</label>
+                    <input type="number" id="cvv" class="form-control cvv" placeholder="Ingresa los 3 dígitos">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre del titular de la tarjeta</label>
+                    <input type="text" id="titular" class="form-control titular" placeholder="Ingresa los datos tal cual aparecen en la tarjeta">
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha de vencimiento</label>
+                    <input type="text" id="fecha" class="form-control fecha" placeholder="MM/AA">
+                </div>
+                <div class="form-group">
+                    <label for="mail">Correo electrónico</label>
+                    <input type="text" id="mail" class="form-control mail" placeholder="Ingresa el mail para enviarte la factura">
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary btn-comprar">Comprar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="wrapper catalogo">
+        <div class="card">
+            <img src="./resources/1.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">El gato que amaba los libros</h5>
+                <p class="card-text autor"><a href="https://www.lecturalia.com/autor/24139/sosuke-natsukawa" target="_blank" class="link-autor">Sosuke Natsukawa</a></p>
+                <p class="card-text precio">$3300</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="1">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/2.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">Verity: La sombra de un engaño</h5>
+                <p class="card-text autor"><a href="https://www.lecturalia.com/autor/18422/colleen-hoover" target="_blank" class="link-autor">Colleen Hoover</a></p>
+                <p class="card-text precio">$3900</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="2">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/3.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">Zen y el arte de cambiar el mundo</h5>
+                <p class="card-text autor"><a href="https://www.lecturalia.com/autor/13928/thich-nhat-hanh" target="_blank" class="link-autor">Thich Nhat Hanh</a></p>
+                <p class="card-text precio">$4200</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="3">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/4.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">Hábitos atómicos</h5>
+                <p class="card-text autor"><a href="https://www.lecturalia.com/autor/23176/james-clear" target="_blank" class="link-autor">James Clear</a></p>
+                <p class="card-text precio">$5700</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="4">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/5.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">Sol de medianoche</h5>
+                <p class="card-text autor"><a href="https://www.lecturalia.com/autor/454/stephenie-meyer" target="_blank" class="link-autor">Stephenie Meyer</a></p>
+                <p class="card-text precio">$8099</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="5">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/6.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">Brilla</h5>
+                <p class="card-text autor"><a href="https://editorialelateneo.com.ar/detalle-autor.php?id_autor=464&autor=Guillermina%20Lopata" target="_blank" class="link-autor">Guillermina Lopata</a></p>
+                <p class="card-text precio">$4100</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="6">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/7.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">Siempre estuve ahí</h5>
+                <p class="card-text autor"><a href="https://www.pagina12.com.ar/433347-oliver-nash-como-ser-varon-trans-en-un-mundo-con-reglas-cis" target="_blank" class="link-autor">Oliver Nash</a></p>
+                <p class="card-text precio">$4250</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="7">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/8.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">Tiempo de ceniza</h5>
+                <p class="card-text autor"><a href="https://es.wikipedia.org/wiki/Zel%C3%A1_Brambill%C3%A9" target="_blank" class="link-autor">Zelá Brambillé</a></p>
+                <p class="card-text precio">$5099</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="8">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/9.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">La larga marcha</h5>
+                <p class="card-text autor"><a href="https://www.lecturalia.com/autor/358/stephen-king" target="_blank" class="link-autor">Stephen King</a></p>
+                <p class="card-text precio">$5600</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="9">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/10.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">1984</h5>
+                <p class="card-text autor"><a href="https://www.lecturalia.com/autor/238/george-orwell" target="_blank" class="link-autor">George Orwell</a></p>
+                <p class="card-text precio">$2200</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="10">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/11.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">H de Harry</h5>
+                <p class="card-text autor"><a href="https://stefflovers.fandom.com/es/wiki/Darlis_Stefany#:~:text=Darlis%20Stefany%2C%20es%20la%20autora,pueden%20encontrar%20todas%20sus%20obras." target="_blank" class="link-autor">Darlis Stefany</a></p>
+                <p class="card-text precio">$7299</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="11">Comprar</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./resources/12.png" alt="Libro" class="img-libro">
+            <div class="card-body">
+                <h5 class="card-title">Bestia</h5>
+                <p class="card-text autor"><a href="https://novacasaeditorial.com/manufacturer/sam-leon" target="_blank" class="link-autor">Sam Leon</a></p>
+                <p class="card-text precio">$12099</p>
+                <a href="#" class="btn btn-primary agregar-carrito" data-id="12">Comprar</a>
+            </div>
+        </div>
+    </div>
+    <script src="./js/funcionalidad.js"></script>
+</body>
+</html>

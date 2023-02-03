@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'Atwriter';
+    src: url('/resources/atwriter.ttf');
+}
+
+.header{
+    background-color: yellow;
+    padding:10px;
+}
+#titulo{
+    color:black;
+    font-family: 'Atwriter';
+    margin-top:15px;
+}
+
+#img-carrito{
+    color:black;
+    width:20%;
+}
+
+.carrito{
+    display:none;
+}
+
+.colCarrito{
+    display:flex;
+    align-items:flex-start;
+    
+}
+.txt-carrito{
+    font-family: 'Atwriter';
+    margin-top:10px;
+}
+
+.colCarrito:hover .carrito{
+    display:block;
+    position:absolute;
+    background-color: white;
+    top:100%;
+    border:1px grey solid;
+    right:25px;
+    min-width:270%; 
+    z-index: 1;   
+}
+
+.contenedor-botones{
+    display: flex;
+}
+.btn-carrito{
+    width:45%;
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top:20px;
+}
+
+.card{
+    border:none;
+}
+
+.card-title{
+    min-height:50px;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.link-autor{
+    color:black;
+}
+
+.img-libro-carrito{
+    width:100%;
+}
+
+td{
+    text-align: center;
+}
+
+th{
+   text-align: center;
+   width:100px;
+}
+
+.colEliminar{
+    width:30px;
+}
+
+.borrar-libro{
+    margin-top:15px;
+}
+
+.disminuir-cant, .aumentar-cant{
+    margin-top:3px;
+    border:1px black solid;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.contenedor-texto{
+    text-align: center;
+}
+
+.msj-error{
+    color:red;
+}
+
+.msj-exito{
+    background-color: rgb(2, 179, 91);
+    color:white;
+    padding:10px;
+    text-align: center;
+}
+
+.txt-total{
+    width:530%;
+    text-align: center;
+    font-weight:bold;
+    font-size:1.2rem;
+    border-top: 1px solid lightgray;
+    padding: 10px;
+    margin-bottom:-10px;
+}
+
+@media screen and (max-width:1366px){
+    .colCantidad{
+        min-width:120px !important;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .colCantidad{
+        min-width: 140px !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #titulo{
+        font-size:1.3rem;
+    }
+
+    #img-carrito{
+        width:100%;
+    }
+
+    .txt-carrito{
+        display:none;
+    }
+
+    .colCarrito:hover .carrito{
+        display:block;
+        position:absolute;
+        background-color: white;
+        top:110%;
+        border:1px grey solid;
+        width:500%;    
+    }
+
+    .btn-carrito{
+        width:100%;
+        margin-bottom: 10px;
+    }
+
+    .contenedor-botones{
+        display:block;
+    }
+
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top:20px;
+    }
+
+    .card-title{
+        font-size:0.8rem;
+        height:10px;
+    }
+
+    .autor{
+        margin-top:-10px;
+    }
+
+    .precio{
+        margin-top:-10px;
+        margin-bottom:5px;
+    }
+
+    .card-text{
+        font-size:0.7rem;
+    }
+
+    .colTitulo, .tdTitulo, .colAutor, .tdAutor, .aumentar-cant, .disminuir-cant{
+        display:none;
+    }
+
+    td{
+        border-top: 1px solid lightgray;
+    }
+
+    .borrar-libro{
+        margin-top:30px;
+        margin-right:10px;
+    }
+
+    .img-libro-carrito{
+        width:150%;
+    }
+
+    .txt-total{
+        width:330%;
+        text-align: center;
+        font-weight:bold;
+        font-size:1.2rem;
+        border-top: 1px solid lightgray;
+        padding: 10px;
+        margin-bottom:-10px;
+    }
+}
